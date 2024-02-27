@@ -24,6 +24,9 @@ export class BoardComponent {
   }
 
   makeMove(index: number) {
+    if (this.winner) {
+      return;
+    }
     if (!this.squares[index]) {
       this.squares.splice(index, 1, this.player);
       this.xIsNext = !this.xIsNext;
